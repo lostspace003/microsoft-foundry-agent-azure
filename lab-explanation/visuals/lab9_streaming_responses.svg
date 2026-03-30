@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E86C1"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="580" rx="12" fill="#F7F9FB"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="900" height="64" rx="12" fill="#1B4F72"/>
+  <rect x="0" y="32" width="900" height="32" fill="#1B4F72"/>
+  <text x="450" y="28" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Lab 9 — Streaming Responses</text>
+  <text x="450" y="52" text-anchor="middle" fill="#AED6F1" font-size="13">Token-by-token output for real-time UX -- streaming with function tools</text>
+
+  <!-- Blocking vs Streaming -->
+  <text x="450" y="104" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Blocking vs Streaming</text>
+
+  <!-- Blocking -->
+  <rect x="60" y="120" width="370" height="90" rx="10" fill="#fff" stroke="#E74C3C" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="245" y="146" text-anchor="middle" fill="#C0392B" font-size="12" font-weight="700">Blocking (Labs 1-9)</text>
+  <rect x="80" y="158" width="60" height="20" rx="4" fill="#FADBD8"/>
+  <rect x="145" y="158" width="60" height="20" rx="4" fill="#FADBD8"/>
+  <rect x="210" y="158" width="60" height="20" rx="4" fill="#FADBD8"/>
+  <rect x="275" y="158" width="60" height="20" rx="4" fill="#FADBD8"/>
+  <rect x="340" y="158" width="60" height="20" rx="4" fill="#D5F5E3"/>
+  <text x="370" y="172" text-anchor="middle" fill="#1E8449" font-size="8" font-weight="600">ALL AT ONCE</text>
+  <text x="245" y="200" text-anchor="middle" fill="#E74C3C" font-size="10">Wait 2-3 seconds, then full response appears</text>
+
+  <!-- Streaming -->
+  <rect x="470" y="120" width="370" height="90" rx="10" fill="#fff" stroke="#27AE60" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="655" y="146" text-anchor="middle" fill="#1E8449" font-size="12" font-weight="700">Streaming (Lab 9)</text>
+  <rect x="490" y="158" width="40" height="20" rx="4" fill="#D5F5E3"/>
+  <text x="510" y="172" text-anchor="middle" fill="#1E8449" font-size="7">Comp</text>
+  <rect x="535" y="158" width="50" height="20" rx="4" fill="#D5F5E3"/>
+  <text x="560" y="172" text-anchor="middle" fill="#1E8449" font-size="7">rehens</text>
+  <rect x="590" y="158" width="40" height="20" rx="4" fill="#D5F5E3"/>
+  <text x="610" y="172" text-anchor="middle" fill="#1E8449" font-size="7">ive</text>
+  <rect x="635" y="158" width="45" height="20" rx="4" fill="#D5F5E3"/>
+  <text x="657" y="172" text-anchor="middle" fill="#1E8449" font-size="7">auto</text>
+  <rect x="685" y="158" width="60" height="20" rx="4" fill="#D5F5E3"/>
+  <text x="715" y="172" text-anchor="middle" fill="#1E8449" font-size="7">insur...</text>
+  <rect x="750" y="158" width="40" height="20" rx="4" fill="#ABEBC6"/>
+  <text x="655" y="200" text-anchor="middle" fill="#27AE60" font-size="10">Tokens arrive in ~0.3s, stream as they come</text>
+
+  <!-- Event stream -->
+  <text x="450" y="250" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Stream Event Lifecycle</text>
+
+  <rect x="60" y="268" width="140" height="40" rx="6" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1"/>
+  <text x="130" y="293" text-anchor="middle" fill="#1B4F72" font-size="10" font-weight="600">response.created</text>
+
+  <line x1="200" y1="288" x2="230" y2="288" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="230" y="268" width="160" height="40" rx="6" fill="#D5F5E3" stroke="#27AE60" stroke-width="1"/>
+  <text x="310" y="293" text-anchor="middle" fill="#1E8449" font-size="10" font-weight="600">text.delta (repeat)</text>
+
+  <line x1="390" y1="288" x2="420" y2="288" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="420" y="268" width="130" height="40" rx="6" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1"/>
+  <text x="485" y="293" text-anchor="middle" fill="#1B4F72" font-size="10" font-weight="600">text.done</text>
+
+  <line x1="550" y1="288" x2="580" y2="288" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="268" width="160" height="40" rx="6" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1"/>
+  <text x="660" y="293" text-anchor="middle" fill="#1B4F72" font-size="10" font-weight="600">response.completed</text>
+
+  <!-- Streaming with function calls -->
+  <text x="450" y="348" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Streaming with Function Calls</text>
+
+  <rect x="40" y="366" width="130" height="40" rx="6" fill="#D5F5E3" stroke="#27AE60" stroke-width="1"/>
+  <text x="105" y="391" text-anchor="middle" fill="#1E8449" font-size="10" font-weight="600">Stream starts</text>
+
+  <line x1="170" y1="386" x2="200" y2="386" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="362" width="170" height="48" rx="6" fill="#FDEBD0" stroke="#E67E22" stroke-width="1"/>
+  <text x="285" y="383" text-anchor="middle" fill="#CA6F1E" font-size="10" font-weight="600">function_call detected</text>
+  <text x="285" y="400" text-anchor="middle" fill="#5D6D7E" font-size="9">args.done event</text>
+
+  <line x1="370" y1="386" x2="400" y2="386" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="400" y="362" width="140" height="48" rx="6" fill="#E8DAEF" stroke="#8E44AD" stroke-width="1"/>
+  <text x="470" y="383" text-anchor="middle" fill="#6C3483" font-size="10" font-weight="600">Execute locally</text>
+  <text x="470" y="400" text-anchor="middle" fill="#5D6D7E" font-size="9">your function</text>
+
+  <line x1="540" y1="386" x2="570" y2="386" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="570" y="362" width="140" height="48" rx="6" fill="#FDEBD0" stroke="#E67E22" stroke-width="1"/>
+  <text x="640" y="383" text-anchor="middle" fill="#CA6F1E" font-size="10" font-weight="600">Send results back</text>
+  <text x="640" y="400" text-anchor="middle" fill="#5D6D7E" font-size="9">stream=True again</text>
+
+  <line x1="710" y1="386" x2="740" y2="386" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="740" y="366" width="120" height="40" rx="6" fill="#D5F5E3" stroke="#27AE60" stroke-width="1"/>
+  <text x="800" y="391" text-anchor="middle" fill="#1E8449" font-size="10" font-weight="600">Stream resumes</text>
+
+  <!-- SDK -->
+  <rect x="60" y="440" width="780" height="110" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="450" y="468" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">SDK Pattern</text>
+  <line x1="80" y1="478" x2="820" y2="478" stroke="#E8E8E8" stroke-width="1"/>
+  <rect x="80" y="490" width="220" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="95" y="507" fill="#2E86C1" font-size="10" font-family="Consolas, monospace">responses.create(stream=True)</text>
+  <rect x="310" y="490" width="240" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="325" y="507" fill="#2E86C1" font-size="10" font-family="Consolas, monospace">event.type == "...text.delta"</text>
+  <rect x="560" y="490" width="250" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="575" y="507" fill="#2E86C1" font-size="10" font-family="Consolas, monospace">print(event.delta, flush=True)</text>
+  <text x="450" y="540" text-anchor="middle" fill="#27AE60" font-size="11" font-weight="600">One parameter change (stream=True) -- completely different UX</text>
+</svg>

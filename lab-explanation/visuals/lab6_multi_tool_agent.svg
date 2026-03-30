@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E86C1"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="540" rx="12" fill="#F7F9FB"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="900" height="64" rx="12" fill="#1B4F72"/>
+  <rect x="0" y="32" width="900" height="32" fill="#1B4F72"/>
+  <text x="450" y="28" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Lab 6 &#x2014; Multi-Tool Agent</text>
+  <text x="450" y="52" text-anchor="middle" fill="#AED6F1" font-size="13">One agent, three tool types: picks the right one automatically</text>
+
+  <!-- Central Agent -->
+  <rect x="310" y="90" width="280" height="60" rx="10" fill="#FDEBD0" stroke="#E67E22" stroke-width="2" filter="url(#shadow)"/>
+  <text x="450" y="117" text-anchor="middle" fill="#CA6F1E" font-size="15" font-weight="700">SmartClaims Unified Agent</text>
+  <text x="450" y="138" text-anchor="middle" fill="#5D6D7E" font-size="11">all tools in one definition</text>
+
+  <!-- Three tool branches -->
+  <!-- File Search -->
+  <line x1="370" y1="150" x2="160" y2="194" stroke="#27AE60" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="60" y="194" width="200" height="80" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.2"/>
+  <text x="160" y="220" text-anchor="middle" fill="#1E8449" font-size="12" font-weight="700">File Search (RAG)</text>
+  <text x="160" y="240" text-anchor="middle" fill="#5D6D7E" font-size="10">Policy document Q and A</text>
+  <text x="160" y="256" text-anchor="middle" fill="#27AE60" font-size="9" font-weight="600">Server-side (automatic)</text>
+
+  <!-- Code Interpreter -->
+  <line x1="450" y1="150" x2="450" y2="194" stroke="#8E44AD" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="340" y="194" width="220" height="80" rx="8" fill="#E8DAEF" stroke="#8E44AD" stroke-width="1.2"/>
+  <text x="450" y="220" text-anchor="middle" fill="#6C3483" font-size="12" font-weight="700">Code Interpreter</text>
+  <text x="450" y="240" text-anchor="middle" fill="#5D6D7E" font-size="10">CSV analytics with pandas</text>
+  <text x="450" y="256" text-anchor="middle" fill="#8E44AD" font-size="9" font-weight="600">Server-side (sandbox)</text>
+
+  <!-- Functions -->
+  <line x1="530" y1="150" x2="730" y2="194" stroke="#E67E22" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="620" y="194" width="220" height="80" rx="8" fill="#FDEBD0" stroke="#E67E22" stroke-width="1.2"/>
+  <text x="730" y="220" text-anchor="middle" fill="#CA6F1E" font-size="12" font-weight="700">Custom Functions</text>
+  <text x="730" y="240" text-anchor="middle" fill="#5D6D7E" font-size="10">Claim lookup + Fraud scoring</text>
+  <text x="730" y="256" text-anchor="middle" fill="#E67E22" font-size="9" font-weight="600">Client-side (your code)</text>
+
+  <!-- Query routing examples -->
+  <text x="450" y="314" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Agent Auto-Routes Queries to the Right Tool</text>
+
+  <rect x="60" y="334" width="250" height="36" rx="6" fill="#D5F5E3" stroke="#27AE60" stroke-width="1"/>
+  <text x="72" y="357" fill="#5D6D7E" font-size="10">"Does our policy cover ride-sharing?"</text>
+
+  <rect x="325" y="334" width="250" height="36" rx="6" fill="#E8DAEF" stroke="#8E44AD" stroke-width="1"/>
+  <text x="337" y="357" fill="#5D6D7E" font-size="10">"Show claims status breakdown"</text>
+
+  <rect x="590" y="334" width="250" height="36" rx="6" fill="#FDEBD0" stroke="#E67E22" stroke-width="1"/>
+  <text x="602" y="357" fill="#5D6D7E" font-size="10">"Status of claim CLM-0042?"</text>
+
+  <text x="185" y="388" text-anchor="middle" fill="#27AE60" font-size="10" font-weight="600">File Search</text>
+  <text x="450" y="388" text-anchor="middle" fill="#8E44AD" font-size="10" font-weight="600">Code Interpreter</text>
+  <text x="715" y="388" text-anchor="middle" fill="#E67E22" font-size="10" font-weight="600">Function Tool</text>
+
+  <!-- Key insight -->
+  <rect x="60" y="410" width="780" height="100" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="450" y="438" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">How It Works</text>
+  <line x1="80" y1="448" x2="820" y2="448" stroke="#E8E8E8" stroke-width="1"/>
+  <circle cx="100" cy="472" r="4" fill="#2E86C1"/>
+  <text x="115" y="477" fill="#2C3E50" font-size="11">All tools passed as one list to PromptAgentDefinition(tools=[...])</text>
+  <circle cx="100" cy="494" r="4" fill="#2E86C1"/>
+  <text x="115" y="499" fill="#2C3E50" font-size="11">Native tools (File Search, Code Interpreter) = server-side | Custom functions = client-side with call loop</text>
+</svg>

@@ -1,0 +1,10 @@
+venv/
+.git/
+.env
+__pycache__/
+*.pyc
+labs-notebooks/
+outputs/
+.azure/
+*.zip
+.gitignore

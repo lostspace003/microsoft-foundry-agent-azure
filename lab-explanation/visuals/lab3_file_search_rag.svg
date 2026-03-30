@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E86C1"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#27AE60"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="620" rx="12" fill="#F7F9FB"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="900" height="64" rx="12" fill="#1B4F72"/>
+  <rect x="0" y="32" width="900" height="32" fill="#1B4F72"/>
+  <text x="450" y="28" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Lab 3 — File Search (RAG)</text>
+  <text x="450" y="52" text-anchor="middle" fill="#AED6F1" font-size="13">Upload policy document, index in vector store, answer questions with citations</text>
+
+  <!-- Flow: Index -->
+  <text x="450" y="104" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Indexing Pipeline</text>
+
+  <rect x="60" y="120" width="180" height="56" rx="8" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1.2"/>
+  <text x="150" y="145" text-anchor="middle" fill="#1B4F72" font-size="12" font-weight="600">Policy Document</text>
+  <text x="150" y="164" text-anchor="middle" fill="#5D6D7E" font-size="10">.md file</text>
+
+  <line x1="240" y1="148" x2="290" y2="148" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="290" y="120" width="180" height="56" rx="8" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1.2"/>
+  <text x="380" y="145" text-anchor="middle" fill="#1B4F72" font-size="12" font-weight="600">upload_and_poll()</text>
+  <text x="380" y="164" text-anchor="middle" fill="#5D6D7E" font-size="10">chunk + embed + index</text>
+
+  <line x1="470" y1="148" x2="520" y2="148" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="520" y="120" width="170" height="56" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.2"/>
+  <text x="605" y="145" text-anchor="middle" fill="#1E8449" font-size="12" font-weight="600">Vector Store</text>
+  <text x="605" y="164" text-anchor="middle" fill="#5D6D7E" font-size="10">managed index</text>
+
+  <line x1="690" y1="148" x2="730" y2="148" stroke="#27AE60" stroke-width="1.5" marker-end="url(#arrowGreen)"/>
+
+  <rect x="730" y="120" width="120" height="56" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.2"/>
+  <text x="790" y="145" text-anchor="middle" fill="#1E8449" font-size="12" font-weight="600">FileSearchTool</text>
+  <text x="790" y="164" text-anchor="middle" fill="#5D6D7E" font-size="10">attached to agent</text>
+
+  <!-- Flow: Query -->
+  <text x="450" y="218" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Query Flow (RAG)</text>
+
+  <rect x="60" y="238" width="180" height="70" rx="8" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1.2"/>
+  <text x="150" y="265" text-anchor="middle" fill="#1B4F72" font-size="12" font-weight="600">User Question</text>
+  <text x="150" y="283" text-anchor="middle" fill="#5D6D7E" font-size="10">"Max auto liability</text>
+  <text x="150" y="297" text-anchor="middle" fill="#5D6D7E" font-size="10">coverage?"</text>
+
+  <line x1="240" y1="273" x2="290" y2="273" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="290" y="240" width="160" height="66" rx="8" fill="#FDEBD0" stroke="#E67E22" stroke-width="1.2"/>
+  <text x="370" y="265" text-anchor="middle" fill="#CA6F1E" font-size="12" font-weight="600">Agent</text>
+  <text x="370" y="283" text-anchor="middle" fill="#5D6D7E" font-size="10">decides to search</text>
+  <text x="370" y="297" text-anchor="middle" fill="#5D6D7E" font-size="10">documents</text>
+
+  <line x1="450" y1="273" x2="500" y2="273" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="500" y="240" width="160" height="66" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.2"/>
+  <text x="580" y="265" text-anchor="middle" fill="#1E8449" font-size="12" font-weight="600">Vector Search</text>
+  <text x="580" y="283" text-anchor="middle" fill="#5D6D7E" font-size="10">finds relevant</text>
+  <text x="580" y="297" text-anchor="middle" fill="#5D6D7E" font-size="10">document chunks</text>
+
+  <line x1="660" y1="273" x2="710" y2="273" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="710" y="240" width="140" height="66" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.2"/>
+  <text x="780" y="265" text-anchor="middle" fill="#1E8449" font-size="12" font-weight="600">Grounded Answer</text>
+  <text x="780" y="283" text-anchor="middle" fill="#5D6D7E" font-size="10">with section</text>
+  <text x="780" y="297" text-anchor="middle" fill="#5D6D7E" font-size="10">citations</text>
+
+  <!-- What is RAG -->
+  <rect x="60" y="340" width="380" height="250" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="250" y="368" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">What is RAG?</text>
+  <line x1="80" y1="378" x2="420" y2="378" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="90" y="400" fill="#2C3E50" font-size="11" font-weight="600">Retrieval-Augmented Generation</text>
+  <text x="90" y="426" fill="#5D6D7E" font-size="11">1. Your document gets chunked into pieces</text>
+  <text x="90" y="446" fill="#5D6D7E" font-size="11">2. Each chunk is converted to a vector</text>
+  <text x="90" y="466" fill="#5D6D7E" font-size="11">3. User question is also vectorized</text>
+  <text x="90" y="486" fill="#5D6D7E" font-size="11">4. Closest chunks are retrieved</text>
+  <text x="90" y="506" fill="#5D6D7E" font-size="11">5. Agent uses chunks to answer</text>
+  <text x="90" y="536" fill="#2E86C1" font-size="11" font-weight="600">Result: Answers grounded in YOUR data</text>
+  <text x="90" y="556" fill="#2E86C1" font-size="11" font-weight="600">not hallucinated from training data</text>
+
+  <!-- SDK -->
+  <rect x="460" y="340" width="380" height="250" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="650" y="368" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">SDK Classes Used</text>
+  <line x1="480" y1="378" x2="820" y2="378" stroke="#E8E8E8" stroke-width="1"/>
+  <rect x="480" y="390" width="340" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="495" y="407" fill="#2E86C1" font-size="11" font-family="Consolas, monospace">vector_stores.create()</text>
+  <text x="720" y="407" fill="#7F8C8D" font-size="10">create index</text>
+  <rect x="480" y="420" width="340" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="495" y="437" fill="#2E86C1" font-size="11" font-family="Consolas, monospace">files.upload_and_poll()</text>
+  <text x="720" y="437" fill="#7F8C8D" font-size="10">chunk + embed</text>
+  <rect x="480" y="450" width="340" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="495" y="467" fill="#2E86C1" font-size="11" font-family="Consolas, monospace">FileSearchTool</text>
+  <text x="720" y="467" fill="#7F8C8D" font-size="10">connect to store</text>
+  <rect x="480" y="480" width="340" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="495" y="497" fill="#2E86C1" font-size="11" font-family="Consolas, monospace">PromptAgentDefinition</text>
+  <text x="720" y="497" fill="#7F8C8D" font-size="10">tools=[file_search]</text>
+  <rect x="480" y="510" width="340" height="24" rx="4" fill="#D5F5E3"/>
+  <text x="495" y="527" fill="#1E8449" font-size="11" font-family="Consolas, monospace">vector_stores.delete()</text>
+  <text x="720" y="527" fill="#7F8C8D" font-size="10">cleanup</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E86C1"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="520" rx="12" fill="#F7F9FB"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="900" height="64" rx="12" fill="#1B4F72"/>
+  <rect x="0" y="32" width="900" height="32" fill="#1B4F72"/>
+  <text x="450" y="28" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Lab 7 — Tavily Web Search</text>
+  <text x="450" y="52" text-anchor="middle" fill="#AED6F1" font-size="13">Live web search as a custom function tool for regulatory intelligence</text>
+
+  <!-- Flow -->
+  <text x="450" y="104" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Search Flow</text>
+
+  <rect x="40" y="120" width="150" height="56" rx="8" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1.2"/>
+  <text x="115" y="144" text-anchor="middle" fill="#1B4F72" font-size="11" font-weight="600">User Query</text>
+  <text x="115" y="163" text-anchor="middle" fill="#5D6D7E" font-size="9">"Latest AI regulations?"</text>
+
+  <line x1="190" y1="148" x2="226" y2="148" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="226" y="120" width="140" height="56" rx="8" fill="#FDEBD0" stroke="#E67E22" stroke-width="1.2"/>
+  <text x="296" y="144" text-anchor="middle" fill="#CA6F1E" font-size="11" font-weight="600">Agent Calls</text>
+  <text x="296" y="163" text-anchor="middle" fill="#5D6D7E" font-size="9">web_search(query)</text>
+
+  <line x1="366" y1="148" x2="402" y2="148" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="402" y="116" width="160" height="64" rx="8" fill="#E8DAEF" stroke="#8E44AD" stroke-width="1.2"/>
+  <text x="482" y="140" text-anchor="middle" fill="#6C3483" font-size="11" font-weight="600">Your Code Runs</text>
+  <text x="482" y="158" text-anchor="middle" fill="#5D6D7E" font-size="9">TavilyClient.search()</text>
+  <text x="482" y="172" text-anchor="middle" fill="#5D6D7E" font-size="9">returns results + answer</text>
+
+  <line x1="562" y1="148" x2="598" y2="148" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="598" y="120" width="130" height="56" rx="8" fill="#FDEBD0" stroke="#E67E22" stroke-width="1.2"/>
+  <text x="663" y="144" text-anchor="middle" fill="#CA6F1E" font-size="11" font-weight="600">Results Sent</text>
+  <text x="663" y="163" text-anchor="middle" fill="#5D6D7E" font-size="9">back to agent</text>
+
+  <line x1="728" y1="148" x2="764" y2="148" stroke="#2E86C1" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="764" y="120" width="100" height="56" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.2"/>
+  <text x="814" y="144" text-anchor="middle" fill="#1E8449" font-size="11" font-weight="600">Answer</text>
+  <text x="814" y="163" text-anchor="middle" fill="#5D6D7E" font-size="9">with URLs</text>
+
+  <!-- Tavily details -->
+  <rect x="60" y="210" width="360" height="130" rx="10" fill="#fff" stroke="#8E44AD" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="240" y="238" text-anchor="middle" fill="#6C3483" font-size="13" font-weight="700">Tavily API</text>
+  <line x1="80" y1="248" x2="400" y2="248" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="90" y="270" fill="#5D6D7E" font-size="11">Search engine optimized for AI agents</text>
+  <text x="90" y="290" fill="#5D6D7E" font-size="11">Returns: pre-made answer + source results</text>
+  <text x="90" y="310" fill="#5D6D7E" font-size="11">Free tier: 1,000 calls/month</text>
+  <text x="90" y="328" fill="#8E44AD" font-size="10" font-weight="600">Requires: TAVILY_API_KEY in .env</text>
+
+  <!-- Same pattern as Lab 5 -->
+  <rect x="460" y="210" width="380" height="130" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="650" y="238" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">Same Pattern as Lab 5</text>
+  <line x1="480" y1="248" x2="820" y2="248" stroke="#E8E8E8" stroke-width="1"/>
+  <circle cx="495" cy="270" r="4" fill="#2E86C1"/>
+  <text x="510" y="275" fill="#2C3E50" font-size="11">Define function schema (JSON)</text>
+  <circle cx="495" cy="294" r="4" fill="#2E86C1"/>
+  <text x="510" y="299" fill="#2C3E50" font-size="11">Register in function_map</text>
+  <circle cx="495" cy="318" r="4" fill="#2E86C1"/>
+  <text x="510" y="323" fill="#2C3E50" font-size="11">ask_with_functions() handles call loop</text>
+
+  <!-- Use cases -->
+  <rect x="60" y="370" width="780" height="120" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="450" y="398" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">Regulatory Intelligence Queries</text>
+  <line x1="80" y1="408" x2="820" y2="408" stroke="#E8E8E8" stroke-width="1"/>
+  <rect x="80" y="420" width="230" height="30" rx="6" fill="#EBF5FB"/>
+  <text x="195" y="440" text-anchor="middle" fill="#5D6D7E" font-size="10">US insurance regulatory changes</text>
+  <rect x="325" y="420" width="250" height="30" rx="6" fill="#EBF5FB"/>
+  <text x="450" y="440" text-anchor="middle" fill="#5D6D7E" font-size="10">AI requirements in fraud detection</text>
+  <rect x="590" y="420" width="230" height="30" rx="6" fill="#EBF5FB"/>
+  <text x="705" y="440" text-anchor="middle" fill="#5D6D7E" font-size="10">NAIC data privacy model laws</text>
+  <text x="450" y="476" text-anchor="middle" fill="#27AE60" font-size="11" font-weight="600">Agent searches the live web and cites source URLs</text>
+</svg>

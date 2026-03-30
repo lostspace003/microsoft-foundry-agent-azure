@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2E86C1"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#E67E22"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="650" rx="12" fill="#F7F9FB"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="900" height="64" rx="12" fill="#1B4F72"/>
+  <rect x="0" y="32" width="900" height="32" fill="#1B4F72"/>
+  <text x="450" y="28" text-anchor="middle" fill="#fff" font-size="20" font-weight="700">Lab 11 — FastAPI Container App Deployment</text>
+  <text x="450" y="52" text-anchor="middle" fill="#AED6F1" font-size="13">Wrap everything into a web app and deploy to Azure Container Apps</text>
+
+  <!-- Architecture -->
+  <text x="450" y="100" text-anchor="middle" fill="#1B4F72" font-size="14" font-weight="700">Deployment Architecture</text>
+
+  <!-- Developer / ACR -->
+  <rect x="60" y="114" width="200" height="48" rx="8" fill="#E8F8F5" stroke="#00BCF2" stroke-width="1.5"/>
+  <text x="160" y="136" text-anchor="middle" fill="#0078D4" font-size="12" font-weight="700">Developer Machine</text>
+  <text x="160" y="154" text-anchor="middle" fill="#5D6D7E" font-size="9">az acr build (no local Docker)</text>
+
+  <line x1="260" y1="138" x2="310" y2="138" stroke="#00BCF2" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ACR -->
+  <rect x="310" y="114" width="240" height="48" rx="8" fill="#E8F8F5" stroke="#00BCF2" stroke-width="1.5"/>
+  <text x="430" y="136" text-anchor="middle" fill="#0078D4" font-size="12" font-weight="700">Azure Container Registry</text>
+  <text x="430" y="154" text-anchor="middle" fill="#5D6D7E" font-size="9">smartclaims-webapp:v1 (python:3.11-slim)</text>
+
+  <line x1="550" y1="138" x2="600" y2="138" stroke="#00BCF2" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Container App Environment label -->
+  <rect x="600" y="114" width="240" height="48" rx="8" fill="#E8F8F5" stroke="#00BCF2" stroke-width="1.5"/>
+  <text x="720" y="136" text-anchor="middle" fill="#0078D4" font-size="12" font-weight="700">Container App</text>
+  <text x="720" y="154" text-anchor="middle" fill="#5D6D7E" font-size="9">HTTPS | Scale 0-1 | Managed Identity</text>
+
+  <line x1="450" y1="162" x2="450" y2="186" stroke="#2E86C1" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Browser -->
+  <rect x="320" y="186" width="260" height="48" rx="8" fill="#EBF5FB" stroke="#2E86C1" stroke-width="1.5"/>
+  <text x="450" y="208" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">Browser</text>
+  <text x="450" y="225" text-anchor="middle" fill="#5D6D7E" font-size="10">index.html + Chart.js</text>
+
+  <line x1="450" y1="234" x2="450" y2="260" stroke="#2E86C1" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- FastAPI -->
+  <rect x="220" y="260" width="460" height="80" rx="8" fill="#fff" stroke="#2E86C1" stroke-width="1.5" filter="url(#shadow)"/>
+  <text x="450" y="284" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">FastAPI (app/main.py)</text>
+  <text x="260" y="308" fill="#5D6D7E" font-size="9">/api/upload</text>
+  <text x="340" y="308" fill="#5D6D7E" font-size="9">/api/chat</text>
+  <text x="420" y="308" fill="#5D6D7E" font-size="9">/api/policy-qa</text>
+  <text x="520" y="308" fill="#5D6D7E" font-size="9">/api/analytics</text>
+  <text x="260" y="328" fill="#5D6D7E" font-size="9">/api/claim-lookup</text>
+  <text x="380" y="328" fill="#5D6D7E" font-size="9">/api/fraud-risk</text>
+  <text x="510" y="328" fill="#5D6D7E" font-size="9">/health</text>
+
+  <line x1="450" y1="340" x2="450" y2="366" stroke="#2E86C1" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- AgentService -->
+  <rect x="240" y="366" width="420" height="70" rx="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="1.5"/>
+  <text x="450" y="390" text-anchor="middle" fill="#1E8449" font-size="13" font-weight="700">AgentService (app/agent_service.py)</text>
+  <text x="280" y="414" fill="#5D6D7E" font-size="9">Vector Store</text>
+  <text x="370" y="414" fill="#5D6D7E" font-size="9">Code Interpreter</text>
+  <text x="490" y="414" fill="#5D6D7E" font-size="9">Function Call Loop</text>
+  <text x="610" y="414" fill="#5D6D7E" font-size="9">Lazy Init</text>
+
+  <line x1="450" y1="436" x2="450" y2="462" stroke="#2E86C1" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Foundry -->
+  <rect x="280" y="462" width="340" height="48" rx="8" fill="#FDEBD0" stroke="#E67E22" stroke-width="1.5"/>
+  <text x="450" y="484" text-anchor="middle" fill="#CA6F1E" font-size="13" font-weight="700">Microsoft Foundry Agent Service</text>
+  <text x="450" y="502" text-anchor="middle" fill="#5D6D7E" font-size="10">gpt-4o-mini + File Search + Code Interpreter + Functions</text>
+
+  <!-- Managed Identity flow on the right -->
+  <rect x="680" y="270" width="170" height="66" rx="8" fill="#F5EEF8" stroke="#8E44AD" stroke-width="1.2"/>
+  <text x="765" y="292" text-anchor="middle" fill="#6C3483" font-size="11" font-weight="700">Managed Identity</text>
+  <text x="765" y="308" text-anchor="middle" fill="#5D6D7E" font-size="9">DefaultAzureCredential</text>
+  <text x="765" y="323" text-anchor="middle" fill="#5D6D7E" font-size="9">No secrets needed</text>
+
+  <!-- Deployment boxes -->
+  <rect x="60" y="535" width="370" height="100" rx="10" fill="#fff" stroke="#D5D8DC" stroke-width="1" filter="url(#shadow)"/>
+  <text x="245" y="563" text-anchor="middle" fill="#1B4F72" font-size="13" font-weight="700">Local Development</text>
+  <line x1="80" y1="573" x2="410" y2="573" stroke="#E8E8E8" stroke-width="1"/>
+  <rect x="80" y="583" width="340" height="24" rx="4" fill="#EBF5FB"/>
+  <text x="95" y="600" fill="#2E86C1" font-size="11" font-family="Consolas, monospace">uvicorn app.main:app --reload --port 8000</text>
+  <text x="250" y="625" text-anchor="middle" fill="#5D6D7E" font-size="10">Open http://localhost:8000</text>
+
+  <rect x="460" y="535" width="380" height="100" rx="10" fill="#fff" stroke="#00BCF2" stroke-width="1.2" filter="url(#shadow)"/>
+  <text x="650" y="563" text-anchor="middle" fill="#0078D4" font-size="13" font-weight="700">Azure Container App Deployment</text>
+  <line x1="480" y1="573" x2="820" y2="573" stroke="#E8E8E8" stroke-width="1"/>
+  <text x="490" y="593" fill="#5D6D7E" font-size="10">Dockerfile → ACR cloud build → Container App</text>
+  <text x="490" y="611" fill="#5D6D7E" font-size="10">gunicorn + UvicornWorker on port 8000</text>
+  <text x="490" y="627" fill="#00BCF2" font-size="10" font-weight="600">Scale-to-zero | Auto TLS | Managed Identity</text>
+</svg>
